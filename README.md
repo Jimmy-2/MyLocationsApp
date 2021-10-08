@@ -1,3 +1,3 @@
 # MyLocationsApp
 
-Chapters 22 to 31 of Ray Wenderlich UIKit Apprentice
+Chapters 22 to 31 of UIKit Apprentice from www.raywenderlich.com
