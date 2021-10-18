@@ -55,7 +55,34 @@ class LocationDetailsViewController: UITableViewController {
     }
 
     dateLabel.text = format(date: Date())
+    
+    //hide keyboard
+    let gestureRecognizer = UITapGestureRecognizer(
+      target: self,
+      //call hidekeyboard message
+      action: #selector(hideKeyboard))
+    gestureRecognizer.cancelsTouchesInView = false
+    tableView.addGestureRecognizer(gestureRecognizer)
+
+    
   }
+  
+  //whenever the user taps somewhere in the table view, the gesture recognizer calls this method
+  @objc func hideKeyboard(
+    _ gestureRecognizer: UIGestureRecognizer
+  ) {
+    let point = gestureRecognizer.location(in: tableView)
+    let indexPath = tableView.indexPathForRow(at: point)
+
+    //if tap is on section o, row o, which is the cell with the text view then return,
+    if indexPath != nil && indexPath!.section == 0 &&
+    indexPath!.row == 0 {
+      return
+    }
+    //otherwise hide keyboard
+    descriptionTextView.resignFirstResponder()
+  }
+
 
   // MARK: - Navigation
   //sets the catefory as categoryName when going to the PickCategory screen
@@ -80,12 +107,33 @@ class LocationDetailsViewController: UITableViewController {
   // MARK: - Actions
   @IBAction func done() {
     //basically close the view and go back to the previous
-    navigationController?.popViewController(animated: true)
+    //navigationController?.popViewController(animated: true)
+    guard let mainView = navigationController?.parent?.view
+      else { return }
+    let hudView = HudView.hud(inView: mainView, animated: true)
+    hudView.text = "Tagged"
+    
+    //new function in Functions.swift
+    afterDelay(0.6) {
+      hudView.hide()
+      self.navigationController?.popViewController(animated: true)
+    }
+    
+    //delays the closing of the screen when done is pressed so screen doesnt close before the hud is done displaying
+    //close Tag Locationn screen after 0.6 seconds
+    /*
+    let delayInSeconds = 0.6
+    DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) {
+      hudView.hide()
+      self.navigationController?.popViewController(animated: true)
+    } */
+
   }
 
   @IBAction func cancel() {
     navigationController?.popViewController(animated: true)
   }
+  
   
   // MARK: - Helper Methods
   func string(from placemark: CLPlacemark) -> String {
@@ -115,6 +163,29 @@ class LocationDetailsViewController: UITableViewController {
   func format(date: Date) -> String {
     return dateFormatter.string(from: date)
   }
+  
+  // MARK: - Table View Delegates
+  //these methods allow the user to tap anywhere inside the first cell and the text view will activate
+  override func tableView(
+    _ tableView: UITableView,
+    willSelectRowAt indexPath: IndexPath
+  ) -> IndexPath? {
+    if indexPath.section == 0 || indexPath.section == 1 {
+      return indexPath
+    } else {
+      return nil
+    }
+  }
+
+  override func tableView(
+    _ tableView: UITableView,
+    didSelectRowAt indexPath: IndexPath
+  ) {
+    if indexPath.section == 0 && indexPath.row == 0 {
+      descriptionTextView.becomeFirstResponder()
+    }
+  }
+
 
 
 }
