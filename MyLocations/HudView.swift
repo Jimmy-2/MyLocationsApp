@@ -3,7 +3,6 @@
 //  MyLocations
 //
 //  Created by Jimmy  on 10/18/21.
-//  Copyright © 2021 Razeware. All rights reserved.
 //
 
 import Foundation

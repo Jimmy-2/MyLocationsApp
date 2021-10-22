@@ -11,6 +11,8 @@
 		BF9AE6AC271BA73400940E92 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9AE6AB271BA73400940E92 /* CategoryPickerViewController.swift */; };
 		BF9AE6AE271D2EA800940E92 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9AE6AD271D2EA800940E92 /* HudView.swift */; };
 		BF9AE6B0271D34B300940E92 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9AE6AF271D34B300940E92 /* Functions.swift */; };
+		BF9AE6B3271FE48300940E92 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9AE6B1271FE48300940E92 /* Location+CoreDataClass.swift */; };
+		BF9AE6B4271FE48300940E92 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9AE6B2271FE48300940E92 /* Location+CoreDataProperties.swift */; };
 		DD8B83BD24E2E23C00CBEF4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B83BC24E2E23C00CBEF4D /* AppDelegate.swift */; };
 		DD8B83BF24E2E23C00CBEF4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B83BE24E2E23C00CBEF4D /* SceneDelegate.swift */; };
 		DD8B83C124E2E23C00CBEF4D /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B83C024E2E23C00CBEF4D /* CurrentLocationViewController.swift */; };
@@ -25,6 +27,8 @@
 		BF9AE6AB271BA73400940E92 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		BF9AE6AD271D2EA800940E92 /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		BF9AE6AF271D34B300940E92 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		BF9AE6B1271FE48300940E92 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BF9AE6B2271FE48300940E92 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DD8B83B924E2E23C00CBEF4D /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD8B83BC24E2E23C00CBEF4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD8B83BE24E2E23C00CBEF4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 		DD8B83B024E2E23C00CBEF4D = {
 			isa = PBXGroup;
 			children = (
+				BF9AE6B1271FE48300940E92 /* Location+CoreDataClass.swift */,
+				BF9AE6B2271FE48300940E92 /* Location+CoreDataProperties.swift */,
 				DD8B83BB24E2E23C00CBEF4D /* MyLocations */,
 				DD8B83BA24E2E23C00CBEF4D /* Products */,
 			);
@@ -182,8 +188,10 @@
 				DD8B83C124E2E23C00CBEF4D /* CurrentLocationViewController.swift in Sources */,
 				DD8B83BD24E2E23C00CBEF4D /* AppDelegate.swift in Sources */,
 				BF9AE6B0271D34B300940E92 /* Functions.swift in Sources */,
+				BF9AE6B4271FE48300940E92 /* Location+CoreDataProperties.swift in Sources */,
 				DD8B83C724E2E23C00CBEF4D /* MyLocations.xcdatamodeld in Sources */,
 				DD8B83BF24E2E23C00CBEF4D /* SceneDelegate.swift in Sources */,
+				BF9AE6B3271FE48300940E92 /* Location+CoreDataClass.swift in Sources */,
 				BF9AE6AE271D2EA800940E92 /* HudView.swift in Sources */,
 				BF9AE6AA271B6AEC00940E92 /* LocationDetailsViewController.swift in Sources */,
 			);
@@ -338,7 +346,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.MyLocations;
+				PRODUCT_BUNDLE_IDENTIFIER = Jimmy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -356,7 +364,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.MyLocations;
+				PRODUCT_BUNDLE_IDENTIFIER = Jimmy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate {
   @IBOutlet var messageLabel: UILabel!
@@ -15,6 +16,9 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
   @IBOutlet var addressLabel: UILabel!
   @IBOutlet var tagButton: UIButton!
   @IBOutlet var getButton: UIButton!
+  
+  var managedObjectContext: NSManagedObjectContext!
+
   
 
   //CLLocationManager object will give the GPS coordinates. We are putting the reference to this object in the constant locationManager
@@ -108,6 +112,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
       let controller = segue.destination as! LocationDetailsViewController
       controller.coordinate = location!.coordinate
       controller.placemark = placemark
+      
+      controller.managedObjectContext = managedObjectContext
     }
   }
 
